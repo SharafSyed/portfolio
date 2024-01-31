@@ -122,3 +122,8 @@ border-radius: 50px;
     
   }
 `
+
+export const TitleSpan = styled.span`
+font-size: 2rem;
+
+`;
