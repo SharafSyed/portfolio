@@ -2,11 +2,32 @@ import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
+import { useState, useEffect } from 'react';
 
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, TitleSpan } from './HeaderStyles';
 
-const Header = () =>  (
-  <Container>
+const Header = () =>  {
+
+  const [stickyClass, setStickyClass] = useState('relative');
+
+  useEffect(() => {
+    window.addEventListener('scroll', stickNavbar);
+
+    return () => {
+      window.removeEventListener('scroll', stickNavbar);
+    };
+  }, []);
+
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY;
+      windowHeight > 500 ? setStickyClass('fixed top-0 left-0 z-50') : setStickyClass('relative');
+    }
+  };
+
+
+  return (
+  <Container   position = 'fixed' top= '0'>
     <Div1>
       <Link href ="/">
         <a style = {{ display: "flex", alignItems: "center", color: 'white', marginBottom: '20px'}}>
@@ -32,11 +53,11 @@ const Header = () =>  (
       </li>
     </Div2>
     <Div3>
-      <SocialIcons href = "https://github.com">
+      <SocialIcons href = "https://github.com/SharafSyed">
         <AiFillGithub size = "3rem"/>
       </SocialIcons>
       
-      <SocialIcons href = "https://linkedin.com">
+      <SocialIcons href = "https://www.linkedin.com/in/sharaf-syed/">
         <AiFillLinkedin size = "3rem"/>
       </SocialIcons>
       
@@ -46,6 +67,6 @@ const Header = () =>  (
       </SocialIcons>
     </Div3>
   </Container>
-);
+);}
 
 export default Header;

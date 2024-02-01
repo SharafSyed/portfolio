@@ -1,4 +1,6 @@
 import React from 'react';
+import { Img1 } from './Bg';
+
 
 const BackgroundAnimation = () => (
   <div>
@@ -7,7 +9,7 @@ const BackgroundAnimation = () => (
       viewBox="0 0 602 602"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-    >
+    >   
       <g opacity="0.15">
         <path
           fillRule="evenodd"
@@ -359,6 +361,7 @@ const BackgroundAnimation = () => (
         </linearGradient>
       </defs>
     </svg>
+        <Img1 src = '/images/headshot-circle.png' width = '50%' height = 'auto'/>
   </div>
 );
 

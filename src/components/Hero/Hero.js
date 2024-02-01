@@ -11,10 +11,11 @@ const Hero = (props) => (
         Welcome! <br />
         I'm Sharaf Syed
       </SectionTitle>
-      <SectionText>
+      <SectionText center>
         Lorem ipsum dolor sit amet
       </SectionText>
       <Button onclick = {() => window.location= 'https://'}>Learn More</Button>
+
     </LeftSection>
   </Section>
 );
